@@ -35,30 +35,46 @@ class motor:
         
     def stop(self):
         GPIO.output(self.PWM,GPIO.LOW)
-        
-    def pwm_control(self,speed):
-        GPIO.PWM(self.PWM,50).start(speed)
 
+class robot:
+    
+    def __init__(self):
+        self.left = motor(37,35)
+        self.right = motor(38,36)
         
+    def forward(self):
+        self.left.full_speed()
+        self.right.full_speed()
+    
+    def stop(self):
+        self.left.stop()
+        self.right.stop()
+    
+    def turn_left(self,distance):
+        self.left.stop()
+        self.right.stop()
+        self.left.move(distance=distance)
+    
+    
 
 # 0/1 used to signify clockwise or counterclockwise.
 CW = 1
 CCW = 0
 
-left = motor(37,35)
-right = motor(38,36)  
-  
+robot = robot()
+
 try:
     # Run forever.
     while True:
-        left.move()
-        #left.full_speed()
-        #left.pwm_control(20)
+        robot.forward()
+        sleep(3)
+        robot.turn_left(1000)
+        sleep(3)
         
-
+        
 # Once finished clean everything up
 except KeyboardInterrupt:
-    left.stop()
-    right.stop()
+    robot.stop()
     print("cleanup")
     GPIO.cleanup()
+
