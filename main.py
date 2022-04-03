@@ -1,18 +1,24 @@
 from time import sleep
 from control.robot import robot
-
+from sshkeyboard import listen_keyboard
 import RPi.GPIO as GPIO
 
 robot = robot()
 
-try:
-    # Run forever.
-    while True:
-        robot.forward()
-        sleep(3)
-        robot.turn_left(1000)
-        sleep(3)
 
+def press(key):
+    if key == "up":
+        robot.forward()
+    elif key == "down":
+        robot.stop()
+    elif key == "left":
+        robot.turn_left(1000)
+    elif key == "right":
+        print("right pressed")
+
+
+try:
+    listen_keyboard(on_press=press)
 
 # Once finished clean everything up
 except KeyboardInterrupt:
