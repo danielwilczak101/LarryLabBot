@@ -1,5 +1,5 @@
 from time import sleep
-from control import robot
+from control.robot import robot
 
 import RPi.GPIO as GPIO
 
