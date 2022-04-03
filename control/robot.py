@@ -1,4 +1,4 @@
-from motor import motor
+import motor
 
 
 class robot:
