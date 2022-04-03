@@ -1,2 +1,2 @@
-from control import motor
-from control import robot
+from control.motor import motor
+from control.robot import robot
