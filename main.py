@@ -12,7 +12,7 @@ right = 0
 distance = 500
 
 
-def press(key):
+async def press(key):
     if key == "up":
         left = 1
         right = 1
@@ -30,7 +30,7 @@ def press(key):
         right = -1
 
 
-def command():
+async def command():
     while True:
         robot.left.turn(left * distance)
         robot.right.turn(right * distance)
@@ -38,7 +38,11 @@ def command():
 
 try:
     print("Use up,left,right and down. Down means stop motors")
-    listen_keyboard(on_press=press)
+    loop = asyncio.get_event_loop()
+    loop.ensure_future(listen_keyboard(on_press=press))
+    loop.ensure_future(command())
+    loop.run_forever()
+    # listen_keyboard(on_press=press)
 
 # Once finished clean everything up
 except KeyboardInterrupt:
