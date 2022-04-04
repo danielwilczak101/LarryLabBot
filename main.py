@@ -30,8 +30,8 @@ async def keyPress():
 
 
 async def command():
-    robot.left.turn(robot.leftInput * distance)
-    robot.right.turn(robot.rightInput * distance)
+    await robot.left.turn(1, robot.leftInput * distance)
+    await robot.right.turn(1, robot.rightInput * distance)
     print("command loop")
 
 
@@ -45,9 +45,7 @@ try:
     loop = asyncio.get_event_loop()
     loop.create_task(main())
     loop.run_forever()
-    # listen_keyboard(on_press=press)
 
-# Once finished clean everything up
 except KeyboardInterrupt:
     robot.stop()
     print("cleanup")
