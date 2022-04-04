@@ -44,12 +44,12 @@ async def command():
 
 
 async def main():
-    listen_keyboard(on_press=keyPress)
     while True:
         await command()
 
 try:
     print("Use up,left,right and down. Down means stop motors")
+    listen_keyboard(on_press=keyPress)
     loop = asyncio.get_event_loop()
     loop.create_task(main())
     loop.run_forever()
