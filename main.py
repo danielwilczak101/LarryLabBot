@@ -13,15 +13,19 @@ async def keyPress():
     if keyboard.is_pressed('w'):
         robot.leftInput = 1
         robot.rightInput = 1
+        print("w")
     elif keyboard.is_pressed('a'):
         robot.rightInput = 1
         robot.leftInput = -1
+        print("a")
     elif keyboard.is_pressed('d'):
         robot.leftInput = 1
         robot.rightInput = -1
+        print("d")
     elif keyboard.is_pressed('s'):
         robot.leftInput = -1
         robot.rightInput = -1
+        print("s")
     else:
         robot.leftInput = 0
         robot.rightInput = 0
