@@ -7,43 +7,44 @@ import asyncio
 
 robot = robot()
 
-left = 0
-right = 0
 distance = 500
 
 
 async def press(key):
     if key == "up":
-        left = 1
-        right = 1
-
-    if key == "left":
-        right = 1
-        left = -1
-
-    if key == "right":
-        left = 1
-        right = -1
-
-    if key == "back":
-        left = -1
-        right = -1
+        robot.leftInput = 1
+        robot.rightInput = 1
+    elif key == "left":
+        robot.rightInput = 1
+        robot.leftInput = -1
+    elif key == "right":
+        robot.leftInput = 1
+        robot.rightInput = -1
+    elif key == "back":
+        robot.leftInput = -1
+        robot.rightInput = -1
+    else:
+        robot.leftInput = 0
+        robot.rightInput = 0
 
     print("key press")
 
 
 async def command():
-    while True:
-        robot.left.turn(left * distance)
-        robot.right.turn(right * distance)
-        print("command loop")
+    robot.left.turn(robot.leftInput * distance)
+    robot.right.turn(robot.rightInput * distance)
+    print("command loop")
 
+
+async def main():
+    while True:
+        await command()
+        await listen_keyboard(on_press=press)
 
 try:
     print("Use up,left,right and down. Down means stop motors")
     loop = asyncio.get_event_loop()
-    loop.ensure_future(listen_keyboard(on_press=press))
-    loop.ensure_future(command())
+    loop.create_task(main())
     loop.run_forever()
     # listen_keyboard(on_press=press)
 
