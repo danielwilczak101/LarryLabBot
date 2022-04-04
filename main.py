@@ -9,20 +9,20 @@ robot = robot()
 distance = 500
 
 
-async def keyPress():
-    if keyboard.is_pressed('w'):
+async def keyPress(key):
+    if key == 'w':
         robot.leftInput = 1
         robot.rightInput = 1
         print("w")
-    elif keyboard.is_pressed('a'):
+    elif key == 'a':
         robot.rightInput = 1
         robot.leftInput = -1
         print("a")
-    elif keyboard.is_pressed('d'):
+    elif key == 'd':
         robot.leftInput = 1
         robot.rightInput = -1
         print("d")
-    elif keyboard.is_pressed('s'):
+    elif key == 's':
         robot.leftInput = -1
         robot.rightInput = -1
         print("s")
@@ -49,7 +49,7 @@ async def main():
 
 try:
     print("Use up,left,right and down. Down means stop motors")
-    listen_keyboard(on_press=keyPress)
+    listen_keyboard(on_press=keyPress())
     loop = asyncio.get_event_loop()
     loop.create_task(main())
     loop.run_forever()
