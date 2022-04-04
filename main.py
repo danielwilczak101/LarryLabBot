@@ -10,16 +10,16 @@ distance = 500
 
 
 async def keyPress():
-    if keyboard.is_pressed('up'):
+    if keyboard.is_pressed('w'):
         robot.leftInput = 1
         robot.rightInput = 1
-    elif keyboard.is_pressed('left'):
+    elif keyboard.is_pressed('a'):
         robot.rightInput = 1
         robot.leftInput = -1
-    elif keyboard.is_pressed('right'):
+    elif keyboard.is_pressed('d'):
         robot.leftInput = 1
         robot.rightInput = -1
-    elif keyboard.is_pressed('down'):
+    elif keyboard.is_pressed('s'):
         robot.leftInput = -1
         robot.rightInput = -1
     else:
