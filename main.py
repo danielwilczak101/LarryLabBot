@@ -29,11 +29,14 @@ async def press(key):
         left = -1
         right = -1
 
+    print("key press")
+
 
 async def command():
     while True:
         robot.left.turn(left * distance)
         robot.right.turn(right * distance)
+        print("command loop")
 
 
 try:
