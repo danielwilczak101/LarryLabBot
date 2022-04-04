@@ -44,7 +44,7 @@ async def command():
 
 
 async def main():
-    listen_keyboard(on_press=press)
+    listen_keyboard(on_press=keyPress)
     while True:
         await command()
 
