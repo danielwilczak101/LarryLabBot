@@ -1,26 +1,25 @@
 from time import sleep
 from control.robot import robot
-from sshkeyboard import listen_keyboard
 import RPi.GPIO as GPIO
-import threading
 import asyncio
+import keyboard
 
 robot = robot()
 
 distance = 500
 
 
-async def press(key):
-    if key == "up":
+async def keyPress():
+    if keyboard.is_pressed('up'):
         robot.leftInput = 1
         robot.rightInput = 1
-    elif key == "left":
+    elif keyboard.is_pressed('left'):
         robot.rightInput = 1
         robot.leftInput = -1
-    elif key == "right":
+    elif keyboard.is_pressed('right'):
         robot.leftInput = 1
         robot.rightInput = -1
-    elif key == "back":
+    elif keyboard.is_pressed('down'):
         robot.leftInput = -1
         robot.rightInput = -1
     else:
@@ -39,7 +38,7 @@ async def command():
 async def main():
     while True:
         await command()
-        await listen_keyboard(on_press=press)
+        await keyPress()
 
 try:
     print("Use up,left,right and down. Down means stop motors")
