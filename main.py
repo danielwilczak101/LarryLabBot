@@ -33,12 +33,10 @@ async def keyPress(key):
 
     await asyncio.sleep(0.001)
 
-    #print("key press; inputs: " + str(robot.leftInput) + "; " + str(robot.rightInput))
-
 
 async def command():
-    await robot.left.turn(1, robot.leftInput * distance)
-    await robot.right.turn(1, robot.rightInput * distance)
+    await robot.left.turn(distance=robot.leftInput * distance)
+    await robot.right.turn(distance=robot.rightInput * distance)
     await asyncio.sleep(0.001)
     #print("command loop")
 
