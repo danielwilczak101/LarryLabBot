@@ -6,9 +6,6 @@ import threading
 
 robot = robot()
 
-left_thread = threading.Thread(target=robot.left.turn)
-right_thread = threading.Thread(target=robot.right.turn)
-
 
 def press(key):
     if key == "up":
@@ -16,10 +13,9 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        left_thread.start()
-        right_thread.start()
+        robot.left.turn(distance=5000)
     elif key == "right":
-        right_thread.start()
+        robot.right.turn(distance=5000)
 
 
 try:
