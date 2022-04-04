@@ -12,9 +12,9 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        robot.turn_left(1000)
+        robot.left.turn(1000)
     elif key == "right":
-        print("right pressed")
+        robot.right.turn(1000)
 
 
 try:

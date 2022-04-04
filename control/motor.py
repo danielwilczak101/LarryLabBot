@@ -16,7 +16,12 @@ class motor:
         # Set the first direction you want it to spin
         GPIO.output(DIR, 1)
 
-    def move(self, direction=0, distance=100, speed=0.001):
+    def direction(self, direction):
+        """Set the direction of the robot."""
+        GPIO.output(self.DIR, direction)
+
+    def turn(self, direction=1, distance=100, speed=0.001):
+        """Move motor control function"""
         # Esablish the direction you want to go
         GPIO.output(self.DIR, direction)
 
@@ -30,7 +35,9 @@ class motor:
             GPIO.output(self.PWM, GPIO.LOW)
             sleep(speed)  # Dictates how fast stepper motor will run
 
-    def full_speed(self):
+    def full_speed(self, direction=1):
+        """Move the motor full speed."""
+        GPIO.output(self.DIR, direction)
         GPIO.output(self.PWM, GPIO.HIGH)
 
     def stop(self):

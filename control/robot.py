@@ -14,8 +14,3 @@ class robot:
     def stop(self):
         self.left.stop()
         self.right.stop()
-
-    def turn_left(self, distance):
-        self.left.stop()
-        self.right.stop()
-        self.left.move(distance=distance)
