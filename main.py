@@ -13,9 +13,9 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        robot.left.turn(distance=5000)
+        robot.left.turn(distance=500)
     elif key == "right":
-        robot.right.turn(distance=5000)
+        robot.right.turn(distance=500)
 
 
 try:
