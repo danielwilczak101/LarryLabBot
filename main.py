@@ -26,7 +26,7 @@ async def keyPress():
         robot.leftInput = 0
         robot.rightInput = 0
 
-    print("key press")
+    print("key press; inputs: " + robot.leftInput + "; " + robot.rightInput)
 
 
 async def command():
