@@ -29,15 +29,15 @@ async def keyPress():
     else:
         robot.leftInput = 0
         robot.rightInput = 0
+        print("no input")
 
-    print("key press; inputs: " + str(robot.leftInput) +
-          "; " + str(robot.rightInput))
+    #print("key press; inputs: " + str(robot.leftInput) + "; " + str(robot.rightInput))
 
 
 async def command():
     await robot.left.turn(1, robot.leftInput * distance)
     await robot.right.turn(1, robot.rightInput * distance)
-    print("command loop")
+    #print("command loop")
 
 
 async def main():
