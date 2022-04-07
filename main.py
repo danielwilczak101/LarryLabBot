@@ -14,21 +14,9 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        t1 = threading.Thread(target=robot.left.turn)
-        t1.start()
-        t2 = threading.Thread(
-            target=robot.right.turn,
-            kwargs={"direction": 0}
-        )
-        t2.start()
+        robot.turn_left()
     elif key == "right":
-        t = threading.Thread(target=robot.right.turn)
-        t.start()
-        t = threading.Thread(
-            target=robot.left.turn,
-            kwargs={"direction": 0}
-        )
-        t.start()
+        robot.turn_right()
     elif key == "r":
         robot.reverse()
 

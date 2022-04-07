@@ -1,5 +1,7 @@
 from control.motor import motor
 
+import threading
+
 
 class robot:
 
@@ -18,3 +20,21 @@ class robot:
     def stop(self):
         self.left.stop()
         self.right.stop()
+
+    def turn_left(self):
+        t1 = threading.Thread(target=self.left.turn)
+        t1.start()
+        t2 = threading.Thread(
+            target=self.right.turn,
+            kwargs={"direction": 0}
+        )
+        t2.start()
+
+    def turn_right(self):
+        t = threading.Thread(target=self.right.turn)
+        t.start()
+        t = threading.Thread(
+            target=self.left.turn,
+            kwargs={"direction": 0}
+        )
+        t.start()
