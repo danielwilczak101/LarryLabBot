@@ -2,7 +2,6 @@ from time import sleep
 from control.robot import robot
 from sshkeyboard import listen_keyboard
 import RPi.GPIO as GPIO
-import threading
 
 robot = robot()
 

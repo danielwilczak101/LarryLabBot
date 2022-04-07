@@ -21,7 +21,7 @@ class motor:
         """Set the direction of the robot."""
         GPIO.output(self.DIR, direction)
 
-    async def turn(self, direction=1, distance=500, speed=0.001):
+    def turn(self, direction=1, distance=500, speed=0.001):
         """Move motor control function"""
         # Esablish the direction you want to go
         GPIO.output(self.DIR, direction)

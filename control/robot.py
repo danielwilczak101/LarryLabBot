@@ -2,8 +2,6 @@ from control.motor import motor
 
 
 class robot:
-    leftInput = 0
-    rightInput = 0
 
     def __init__(self):
         self.left = motor(37, 35)
