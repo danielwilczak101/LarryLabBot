@@ -2,6 +2,8 @@ from time import sleep
 from control.robot import robot
 from sshkeyboard import listen_keyboard
 import RPi.GPIO as GPIO
+import threading
+
 
 robot = robot()
 
@@ -12,9 +14,11 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        robot.left.turn(distance=500)
+        t = threading.ThreadError(target=robot.left.turn())
+        t.start()
     elif key == "right":
-        robot.right.turn(distance=500)
+        t = threading.ThreadError(target=robot.left.turn())
+        t.start()
     elif key == "r":
         robot.reverse()
 
