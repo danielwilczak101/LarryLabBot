@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 from time import sleep
-import asyncio
 
 # Setup pin layout on PI
 GPIO.setmode(GPIO.BOARD)
@@ -31,10 +30,10 @@ class motor:
             # Set one coil winding to high
             GPIO.output(self.PWM, GPIO.HIGH)
             # Allow it to get there.
-            asyncio.sleep(speed)  # Dictates how fast stepper motor will run
+            sleep(speed)  # Dictates how fast stepper motor will run
             # Set coil winding to low
             GPIO.output(self.PWM, GPIO.LOW)
-            asyncio.sleep(speed)  # Dictates how fast stepper motor will run
+            sleep(speed)  # Dictates how fast stepper motor will run
 
     def full_speed(self, direction=1):
         """Move the motor full speed."""
