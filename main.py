@@ -14,10 +14,10 @@ def press(key):
     elif key == "down":
         robot.stop()
     elif key == "left":
-        t = threading.ThreadError(target=robot.left.turn())
+        t = threading.ThreadError(target=robot.left.turn)
         t.start()
     elif key == "right":
-        t = threading.ThreadError(target=robot.left.turn())
+        t = threading.ThreadError(target=robot.left.turn)
         t.start()
     elif key == "r":
         robot.reverse()
