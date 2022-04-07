@@ -35,10 +35,15 @@ class motor:
             GPIO.output(self.PWM, GPIO.LOW)
             sleep(speed)  # Dictates how fast stepper motor will run
 
-    def full_speed(self, direction=1):
+    def forward(self):
         """Move the motor full speed."""
-        GPIO.output(self.DIR, direction)
+        GPIO.output(self.DIR, 1)
         GPIO.output(self.PWM, GPIO.HIGH)
 
     def stop(self):
         GPIO.output(self.PWM, GPIO.LOW)
+
+    def reverse(self):
+        """Move the motor full speed."""
+        GPIO.output(self.DIR, 0)
+        GPIO.output(self.PWM, GPIO.HIGH)

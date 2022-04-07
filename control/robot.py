@@ -8,8 +8,12 @@ class robot:
         self.right = motor(38, 36)
 
     def forward(self):
-        self.left.full_speed()
-        self.right.full_speed()
+        self.left.forward()
+        self.right.forward()
+
+    def reverse(self):
+        self.left.reverse()
+        self.right.reverse()
 
     def stop(self):
         self.left.stop()

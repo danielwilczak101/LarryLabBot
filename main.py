@@ -10,11 +10,13 @@ def press(key):
     if key == "up":
         robot.forward()
     elif key == "down":
-        robot.stop()
+        robot.reverse()
     elif key == "left":
         robot.left.turn(distance=500)
     elif key == "right":
         robot.right.turn(distance=500)
+    elif key == "s":
+        robot.stop()
 
 
 try:
