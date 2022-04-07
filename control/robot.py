@@ -4,8 +4,8 @@ from control.motor import motor
 class robot:
 
     def __init__(self):
-        self.left = motor(37, 35)
-        self.right = motor(38, 36)
+        self.left = motor(38, 36)
+        self.right = motor(37, 35)
 
     def forward(self):
         self.left.forward()
