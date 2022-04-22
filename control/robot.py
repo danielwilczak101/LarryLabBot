@@ -26,7 +26,7 @@ class robot:
         t1.start()
         t2 = threading.Thread(
             target=self.right.turn,
-            kwargs={"direction": 1}
+            kwargs={"direction": 0}
         )
         t2.start()
 
