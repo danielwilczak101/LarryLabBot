@@ -13,6 +13,7 @@ def index():
 @app.route('/forward')
 def forward():
     kit.motor1.throttle = 0.5
+    kit.motor2.throttle = 0.5
     print("forward")
     return 'Forward'
 
@@ -20,20 +21,21 @@ def forward():
 @app.route('/reverse')
 def reverse():
     kit.motor1.throttle = -0.5
+    kit.motor2.throttle = -0.5
     print("reverse")
     return 'Motor 1 should reverse'
 
 
 @app.route('/left')
 def left():
-    kit.motor1.throttle = 0.25
+    kit.motor1.throttle = 0.2
     print("left")
     return 'Motor 1 should start'
 
 
 @app.route('/right')
 def right():
-    kit.motor1.throttle = 0.25
+    kit.motor1.throttle = 0.2
     print("right")
     return 'Motor 1 should stop'
 
@@ -41,5 +43,6 @@ def right():
 @app.route('/stop')
 def stop():
     kit.motor1.throttle = 0
+    kit.motor2.throttle = 0
     print("stop")
     return 'Motor 1 should stop'
