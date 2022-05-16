@@ -10,6 +10,13 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/forward')
+def forward():
+    #kit.motor1.throttle = 0.5
+    print("forward")
+    return 'Forward'
+
+
 @app.route('/start')
 def start():
     #kit.motor1.throttle = 0.5
