@@ -6,21 +6,22 @@
     document.addEventListener('keydown', function (e) {
         switch (e.keyCode) {
             case 37:
-                alert('left');
+                $.get("/left");
                 break;
             case 38:
-                alert('forward');
                 $.get("/forward");
                 break;
             case 39:
-                alert('right');
+                $.get("/right");
                 break;
             case 40:
-                alert('down');
+                $.get("/reverse");
+                break;
+            case 40:
+                $.get("/stop");
                 break;
         }
     });
 </script>
 
-
-Press your arrow key's to accomplish tasks.
+Press your arrow key's to accomplish tasks and spacebar for stop.

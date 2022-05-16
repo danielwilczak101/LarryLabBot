@@ -17,19 +17,29 @@ def forward():
     return 'Forward'
 
 
-@app.route('/start')
-def start():
+@app.route('/reverse')
+def reverse():
+    #kit.motor1.throttle = -0.5
+    print("reverse")
+    return 'Motor 1 should reverse'
+
+
+@app.route('/left')
+def left():
     #kit.motor1.throttle = 0.5
+    print("left")
     return 'Motor 1 should start'
+
+
+@app.route('/right')
+def right():
+    #kit.motor1.throttle = 0
+    print("right")
+    return 'Motor 1 should stop'
 
 
 @app.route('/stop')
 def stop():
     #kit.motor1.throttle = 0
+    print("stop")
     return 'Motor 1 should stop'
-
-
-@app.route('/reverse')
-def reverse():
-    #kit.motor1.throttle = -0.5
-    return 'Motor 1 should reverse'
