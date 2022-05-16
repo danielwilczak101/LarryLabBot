@@ -4,6 +4,8 @@ from flask import Flask, render_template
 kit = MotorKit()
 app = Flask(__name__)
 
+throttle = 1
+
 
 @app.route('/')
 def index():
@@ -15,8 +17,8 @@ def forward():
     kit.motor2.throttle = 0
     kit.motor4.throttle = 0
 
-    kit.motor1.throttle = 0.5
-    kit.motor3.throttle = -0.5
+    kit.motor1.throttle = throttle
+    kit.motor3.throttle = -throttle
 
     print("forward")
     return 'Forward'
@@ -27,8 +29,8 @@ def reverse():
     kit.motor2.throttle = 0
     kit.motor4.throttle = 0
 
-    kit.motor1.throttle = -0.5
-    kit.motor3.throttle = 0.5
+    kit.motor1.throttle = -throttle
+    kit.motor3.throttle = throttle
     print("reverse")
     return 'Motor 1 should reverse'
 
@@ -38,8 +40,8 @@ def left():
     kit.motor1.throttle = 0
     kit.motor3.throttle = 0
 
-    kit.motor2.throttle = 0.5
-    kit.motor4.throttle = -0.5
+    kit.motor2.throttle = throttle
+    kit.motor4.throttle = -throttle
     print("left")
     return 'Motor 1 should start'
 
@@ -49,8 +51,8 @@ def right():
     kit.motor1.throttle = 0
     kit.motor3.throttle = 0
 
-    kit.motor2.throttle = -0.5
-    kit.motor4.throttle = 0.5
+    kit.motor2.throttle = -throttle
+    kit.motor4.throttle = throttle
     print("right")
     return 'Motor 1 should stop'
 
