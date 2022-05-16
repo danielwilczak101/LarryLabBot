@@ -1,28 +1,28 @@
-from adafruit_motorkit import MotorKit
-from flask import Flask
+#from adafruit_motorkit import MotorKit
+from flask import Flask, render_template
 
 #kit = MotorKit()
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Use routes: /start, /stop, /reverse.'
+def index():
+    return render_template("index.html")
 
 
 @app.route('/start')
-def hello_world():
+def start():
     #kit.motor1.throttle = 0.5
     return 'Motor 1 should start'
 
 
 @app.route('/stop')
-def hello_world():
+def stop():
     #kit.motor1.throttle = 0
     return 'Motor 1 should stop'
 
 
 @app.route('/reverse')
-def hello_world():
+def reverse():
     #kit.motor1.throttle = -0.5
     return 'Motor 1 should reverse'
