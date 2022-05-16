@@ -16,7 +16,7 @@ def forward():
     kit.motor4.throttle = 0
 
     kit.motor1.throttle = 0.5
-    kit.motor3.throttle = 0.5
+    kit.motor3.throttle = -0.5
 
     print("forward")
     return 'Forward'
@@ -28,7 +28,7 @@ def reverse():
     kit.motor4.throttle = 0
 
     kit.motor1.throttle = -0.5
-    kit.motor3.throttle = -0.5
+    kit.motor3.throttle = 0.5
     print("reverse")
     return 'Motor 1 should reverse'
 
@@ -39,7 +39,7 @@ def left():
     kit.motor3.throttle = 0
 
     kit.motor2.throttle = 0.5
-    kit.motor4.throttle = 0.5
+    kit.motor4.throttle = -0.5
     print("left")
     return 'Motor 1 should start'
 
@@ -50,7 +50,7 @@ def right():
     kit.motor3.throttle = 0
 
     kit.motor2.throttle = -0.5
-    kit.motor4.throttle = -0.5
+    kit.motor4.throttle = 0.5
     print("right")
     return 'Motor 1 should stop'
 
