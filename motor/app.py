@@ -1,10 +1,16 @@
 from adafruit_motorkit import MotorKit
 from flask import Flask, render_template
 
+import socket
+
 kit = MotorKit()
 app = Flask(__name__)
 
 throttle = 1
+
+# Print the user the current i.p Address
+print((([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] if not ip.startswith("127.")] or [[(s.connect(("8.8.8.8", 53)),
+      s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]]) + ["no IP found"])[0])
 
 
 @app.route('/')
