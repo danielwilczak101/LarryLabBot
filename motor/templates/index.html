@@ -156,6 +156,26 @@
                 break;
         }
     });
+
+    $("#forward").click(function () {
+        $.get("/forward");
+    });
+
+    $("#left").click(function () {
+        $.get("/left");
+    });
+
+    $("#right").click(function () {
+        $.get("/right");
+    });
+
+    $("#reverse").click(function () {
+        $.get("/reverse");
+    });
+
+    $("#stop").click(function () {
+        $.get("/stop");
+    });
 </script>
 
 <body class="text-center">
@@ -177,7 +197,11 @@
             <p class="lead">Press your arrow key's to accomplish tasks and spacebar for stop.
             </p>
             <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+                <a href="#" id="forward" class="btn btn-lg btn-secondary">Forward</a>
+                <a href="#" id="reverse" class="btn btn-lg btn-secondary">Reverse</a>
+                <a href="#" id="left" class="btn btn-lg btn-secondary">Left</a>
+                <a href="#" id="right" class="btn btn-lg btn-secondary">Right</a>
+                <a href="#" id="stop" class="btn btn-lg btn-secondary">Stop</a>
             </p>
         </main>
 
