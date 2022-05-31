@@ -3,6 +3,7 @@ EPPL larry the lab bot. Fun project for driving a small bot inside the lab.
 
 #### Start up commands
 ```bash
+cd Desktop/LarryLabBot/motor/
 gunicorn -w 1 -b 0.0.0.0:4000 app:app // Not detached
 gunicorn -w 1 -b 0.0.0.0:4000 app:app -D --log-file=gunicorn.log // Detached
 ```
