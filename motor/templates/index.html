@@ -156,30 +156,16 @@
                 break;
         }
 
-
-        $('#forward').css('cursor', 'pointer');
-        $(document).on('click', '#forward', function (event) {
-            $.get("/forward");
-        });
-
-        $('#stop').css('cursor', 'pointer');
-        $(document).on('click', '#stop', function (event) {
-            $.get("/stop");
-        });
+        // First we check if you support touch, otherwise it's click:
+        let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 
-
-        $("#left").click(function () {
-            $.get("/left");
-        });
-
-        $("#right").click(function () {
-            $.get("/right");
-        });
-
-        $("#reverse").click(function () {
-            $.get("/reverse");
-        });
+        // or if you use jQuery:
+        $('#forward').on(touchEvent, $.get("/forward"));
+        $('#stop').on(touchEvent, $.get("/stop"));
+        $('#left').on(touchEvent, $.get("/left"));
+        $('#right').on(touchEvent, $.get("/right"));
+        $('#reverse').on(touchEvent, $.get("/reverse"));
 
 
     });
