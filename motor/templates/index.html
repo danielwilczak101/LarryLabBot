@@ -137,25 +137,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <script>
-    document.addEventListener('keydown', function (e) {
-        switch (e.keyCode) {
-            case 37:
-                $.get("/left");
-                break;
-            case 38:
-                $.get("/forward");
-                break;
-            case 39:
-                $.get("/right");
-                break;
-            case 40:
-                $.get("/reverse");
-                break;
-            case 32:
-                $.get("/stop");
-                break;
-        }
-    });
+
 
     // First we check if you support touch, otherwise it's click:
     let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
