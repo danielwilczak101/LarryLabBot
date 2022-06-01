@@ -81,7 +81,7 @@ def rotate_right():
 
 
 @app.route('/rotate/left')
-def rotate_right():
+def rotate_left():
     kit.motor1.throttle = throttle
     kit.motor3.throttle = 0
 
