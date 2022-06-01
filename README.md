@@ -8,7 +8,7 @@ ssh pi@raspberrypi.local
 ```
 Move to the code directory.
 ```bash
-cd Desktop/LarryLabBot/motor/
+cd Desktop/LarryLabBot/
 ```
 
 Run one of the two options.
