@@ -157,25 +157,30 @@
         }
     });
 
-    $("a forward").click(function () {
-        $.get("/forward");
+    $(document).ready(function () {
+        $("#forward").click(function () {
+            $.get("/forward");
+        });
     });
 
-    $("a left").click(function () {
+
+    $("#left").click(function () {
         $.get("/left");
     });
 
-    $("a right").click(function () {
+    $("#right").click(function () {
         $.get("/right");
     });
 
-    $("a reverse").click(function () {
+    $("#reverse").click(function () {
         $.get("/reverse");
     });
 
-    $("a stop").click(function () {
+    $("#stop").click(function () {
         $.get("/stop");
     });
+
+
 </script>
 
 <body class="text-center">
@@ -197,19 +202,16 @@
             <p class="lead">Press your arrow key's to accomplish tasks and spacebar for stop.
             </p>
             <p class="lead">
-                <a id="forward" class="btn btn-lg btn-secondary">Forward</a>
-                <a id="reverse" class="btn btn-lg btn-secondary">Reverse</a>
-                <a id="left" class="btn btn-lg btn-secondary">Left</a>
-                <a id="right" class="btn btn-lg btn-secondary">Right</a>
-                <a id="stop" class="btn btn-lg btn-secondary">Stop</a>
+            <div id="forward" class="btn btn-lg btn-secondary">Forward</div>
+            <div id="reverse" class="btn btn-lg btn-secondary">Reverse</div>
+            <div id="left" class="btn btn-lg btn-secondary">Left</div>
+            <div id="right" class="btn btn-lg btn-secondary">Right</div>
+            <div id="stop" class="btn btn-lg btn-secondary">Stop</div>
             </p>
         </main>
 
         <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
-                        href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
+            Created by Daniel Wilczak for Larry the Lab Bot.
         </footer>
     </div>
 
