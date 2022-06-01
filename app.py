@@ -82,10 +82,10 @@ def rotate_right():
 
 @app.route('/rotate/left')
 def rotate_left():
-    kit.motor1.throttle = throttle
+    kit.motor1.throttle = -throttle
     kit.motor3.throttle = 0
 
-    kit.motor2.throttle = throttle
+    kit.motor2.throttle = -throttle
     kit.motor4.throttle = 0
     print("rotate left")
     return 'RL'
