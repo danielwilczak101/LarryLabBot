@@ -157,9 +157,17 @@
         }
 
 
-        $("#forward").click(function () {
+        $('#forward').css('cursor', 'pointer');
+        $(document).on('click', '#forward', function (event) {
             $.get("/forward");
         });
+
+        $('#stop').css('cursor', 'pointer');
+        $(document).on('click', '#stop', function (event) {
+            $.get("/stop");
+        });
+
+
 
         $("#left").click(function () {
             $.get("/left");
@@ -173,9 +181,7 @@
             $.get("/reverse");
         });
 
-        $("#stop").click(function () {
-            $.get("/stop");
-        });
+
     });
 </script>
 
