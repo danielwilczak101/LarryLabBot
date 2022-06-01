@@ -159,15 +159,12 @@
         // First we check if you support touch, otherwise it's click:
         let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
-
         // or if you use jQuery:
         $('#forward').on(touchEvent, $.get("/forward"));
         $('#stop').on(touchEvent, $.get("/stop"));
         $('#left').on(touchEvent, $.get("/left"));
         $('#right').on(touchEvent, $.get("/right"));
         $('#reverse').on(touchEvent, $.get("/reverse"));
-
-
     });
 </script>
 
