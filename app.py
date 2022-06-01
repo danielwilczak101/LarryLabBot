@@ -23,7 +23,7 @@ def forward():
     kit.motor3.throttle = -throttle
 
     print("forward")
-    return 'Forward'
+    return ''
 
 
 @app.route('/reverse')
@@ -34,7 +34,7 @@ def reverse():
     kit.motor1.throttle = -throttle
     kit.motor3.throttle = throttle
     print("reverse")
-    return 'Motor 1 should reverse'
+    return ''
 
 
 @app.route('/left')
@@ -45,7 +45,7 @@ def left():
     kit.motor2.throttle = throttle
     kit.motor4.throttle = -throttle
     print("left")
-    return 'Motor 1 should start'
+    return ''
 
 
 @app.route('/right')
@@ -56,7 +56,7 @@ def right():
     kit.motor2.throttle = -throttle
     kit.motor4.throttle = throttle
     print("right")
-    return 'Motor 1 should stop'
+    return ''
 
 
 @app.route('/stop')
@@ -66,4 +66,26 @@ def stop():
     kit.motor3.throttle = 0
     kit.motor4.throttle = 0
     print("stop")
-    return 'Motor 1 should stop'
+    return ''
+
+
+@app.route('/rotate/right')
+def rotate_right():
+    kit.motor1.throttle = 0
+    kit.motor3.throttle = -throttle
+
+    kit.motor2.throttle = 0
+    kit.motor4.throttle = throttle
+    print("rotate right")
+    return ''
+
+
+@app.route('/rotate/left')
+def rotate_right():
+    kit.motor1.throttle = throttle
+    kit.motor3.throttle = 0
+
+    kit.motor2.throttle = -throttle
+    kit.motor4.throttle = 0
+    print("rotate left")
+    return ''
