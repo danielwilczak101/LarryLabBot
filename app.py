@@ -72,7 +72,7 @@ def stop():
 @app.route('/rotate/right')
 def rotate_right():
     kit.motor1.throttle = 0
-    kit.motor3.throttle = -throttle
+    kit.motor3.throttle = throttle
 
     kit.motor2.throttle = 0
     kit.motor4.throttle = throttle
@@ -85,7 +85,7 @@ def rotate_left():
     kit.motor1.throttle = throttle
     kit.motor3.throttle = 0
 
-    kit.motor2.throttle = -throttle
+    kit.motor2.throttle = throttle
     kit.motor4.throttle = 0
     print("rotate left")
     return 'RL'
