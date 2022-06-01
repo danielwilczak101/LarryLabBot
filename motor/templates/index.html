@@ -157,8 +157,25 @@
         }
     });
 
-    $('a').bind("touchstart", function (e) { alert('Span Clicked!') });
+    $("a forward").click(function () {
+        $.get("/forward");
+    });
 
+    $("a left").click(function () {
+        $.get("/left");
+    });
+
+    $("a right").click(function () {
+        $.get("/right");
+    });
+
+    $("a reverse").click(function () {
+        $.get("/reverse");
+    });
+
+    $("a stop").click(function () {
+        $.get("/stop");
+    });
 </script>
 
 <body class="text-center">
@@ -168,11 +185,9 @@
             <div class="inner">
                 <h3 class="masthead-brand">Cover</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a href="#" id="forward" class="nav-link">Forward</a>
-                    <a href="#" id="reverse" class="nav-link">Reverse</a>
-                    <a href="#" id="left" class="nav-link">Left</a>
-                    <a href="#" id="right" class="nav-link">Right</a>
-                    <a href="#" id="stop" class="nav-link">Stop</a>
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </nav>
             </div>
         </header>
@@ -182,7 +197,11 @@
             <p class="lead">Press your arrow key's to accomplish tasks and spacebar for stop.
             </p>
             <p class="lead">
-                Click the navbar to drive.
+                <a id="forward" class="btn btn-lg btn-secondary">Forward</a>
+                <a id="reverse" class="btn btn-lg btn-secondary">Reverse</a>
+                <a id="left" class="btn btn-lg btn-secondary">Left</a>
+                <a id="right" class="btn btn-lg btn-secondary">Right</a>
+                <a id="stop" class="btn btn-lg btn-secondary">Stop</a>
             </p>
         </main>
 
