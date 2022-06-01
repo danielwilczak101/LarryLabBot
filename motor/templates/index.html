@@ -155,35 +155,13 @@
                 $.get("/stop");
                 break;
         }
-
-
-
-        $('#forward').css('cursor', 'pointer');
-        $(document).on('click', '#forward', function (event) {
-            $.get("/forward");
-        });
-
-        $('#stop').css('cursor', 'pointer');
-        $(document).on('click', '#stop', function (event) {
-            $.get("/stop");
-        });
-
-
-
-        $("#left").click(function () {
-            $.get("/left");
-        });
-
-        $("#right").click(function () {
-            $.get("/right");
-        });
-
-        $("#reverse").click(function () {
-            $.get("/reverse");
-        });
-
-
     });
+
+    // First we check if you support touch, otherwise it's click:
+    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
+    // or if you use jQuery:
+    $('#forward').on(touchEvent, $.get("/forward"););
 </script>
 
 <body class="text-center">
