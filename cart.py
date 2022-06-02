@@ -48,6 +48,7 @@ def left():
         # provide duty cycle in the range 0-100
         stepper_pwm.ChangeDutyCycle(100)
         sleep(0.001)
+        stepper_pwm.ChangeDutyCycle(0)
     print("left")
     return 'L'
 
@@ -59,6 +60,7 @@ def right():
         # provide duty cycle in the range 0-100
         stepper_pwm.ChangeDutyCycle(100)
         sleep(0.001)
+        stepper_pwm.ChangeDutyCycle(0)
     print("right")
     return 'R'
 
