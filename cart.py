@@ -65,6 +65,7 @@ def right():
 
 @app.route('/stop')
 def stop():
+    GPIO.output(enable, GPIO.LOW)
     motor_pwm.ChangeDutyCycle(0)
     print("stop")
     return 'S'
