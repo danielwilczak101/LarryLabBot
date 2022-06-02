@@ -6,7 +6,7 @@ pwm = 19
 enable = 20
 dir = 21
 
-GPIO.setmode(GPIO.BOARD)  # set pin numbering system
+GPIO.setmode(GPIO.BCM)  # set pin numbering system
 
 GPIO.setup(pwm, GPIO.OUT)
 GPIO.setup(enable, GPIO.OUT)
