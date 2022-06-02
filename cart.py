@@ -25,7 +25,7 @@ GPIO.output(dir, GPIO.HIGH)
 stepper_pwm = GPIO.PWM(stepper_pwm_pin, 50_000)
 stepper_pwm.start(0)  # start PWM of required Duty Cycle
 
-motor_pwm = GPIO.PWM(motor_pin, 5_000)  # create PWM instance with frequency
+motor_pwm = GPIO.PWM(motor_pin, 3_000)  # create PWM instance with frequency
 motor_pwm.start(0)  # start PWM of required Duty Cycle
 
 
@@ -36,7 +36,7 @@ def index():
 
 @app.route('/forward')
 def forward():
-    motor_pwm.ChangeDutyCycle(30)
+    motor_pwm.ChangeDutyCycle(50)
     print("forward")
     return 'F'
 
