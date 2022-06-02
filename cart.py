@@ -1,16 +1,23 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-ledpin = 19				# PWM pin connected to LED
+
+pwm = 19
+enable = 20
+dir = 21
 
 GPIO.setmode(GPIO.BOARD)  # set pin numbering system
-GPIO.setup(ledpin, GPIO.OUT)
 
-GPIO.setup(20, GPIO.HIGH)           # set GPIO24 as an output
-GPIO.setup(21, GPIO.HIGH)           # set GPIO24 as an output
+GPIO.setup(pwm, GPIO.OUT)
+GPIO.setup(enable, GPIO.OUT)
+GPIO.setup(dir, GPIO.OUT)
 
-pi_pwm = GPIO.PWM(ledpin, 1000)  # create PWM instance with frequency
+GPIO.output(enable, GPIO.HIGH)
+GPIO.output(dir, GPIO.HIGH)
+
+pi_pwm = GPIO.PWM(pwm, 1000)  # create PWM instance with frequency
 pi_pwm.start(0)  # start PWM of required Duty Cycle
+
 
 print("Running")
 
