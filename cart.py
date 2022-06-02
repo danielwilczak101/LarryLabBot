@@ -6,10 +6,8 @@ ledpin = 19				# PWM pin connected to LED
 GPIO.setmode(GPIO.BOARD)  # set pin numbering system
 GPIO.setup(ledpin, GPIO.OUT)
 
-# Enable Pin
-GPIO.setup(20, GPIO.OUT, initial=1)
-# Direction pin
-GPIO.setup(21, GPIO.OUT, initial=1)
+GPIO.setup(20, GPIO.HIGH)           # set GPIO24 as an output
+GPIO.setup(21, GPIO.HIGH)           # set GPIO24 as an output
 
 pi_pwm = GPIO.PWM(ledpin, 1000)  # create PWM instance with frequency
 pi_pwm.start(0)  # start PWM of required Duty Cycle
