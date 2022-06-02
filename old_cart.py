@@ -16,7 +16,7 @@ GPIO.setup(dir, GPIO.OUT)
 GPIO.setup(motor_pin, GPIO.OUT)
 
 GPIO.output(enable, GPIO.HIGH)
-GPIO.output(dir, GPIO.HIGH)
+GPIO.output(dir, GPIO.LOW)
 
 # create PWM instance with frequency
 stepper_pwm = GPIO.PWM(stepper_pwm_pin, 5000)

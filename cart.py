@@ -44,7 +44,9 @@ def forward():
 @app.route('/left')
 def left():
     GPIO.output(dir, GPIO.HIGH)
-    stepper_pwm.ChangeDutyCycle(100)
+    for _ in range(100):
+        stepper_pwm.ChangeDutyCycle(100)
+        sleep(0.001)
     print("left")
     return 'L'
 
@@ -52,7 +54,9 @@ def left():
 @app.route('/right')
 def right():
     GPIO.output(dir, GPIO.LOW)
-    stepper_pwm.ChangeDutyCycle(100)
+    for _ in range(100):
+        stepper_pwm.ChangeDutyCycle(100)
+        sleep(0.001)
     print("right")
     return 'R'
 
