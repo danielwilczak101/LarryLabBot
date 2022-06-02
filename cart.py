@@ -22,7 +22,7 @@ GPIO.output(enable, GPIO.HIGH)
 GPIO.output(dir, GPIO.HIGH)
 
 # create PWM instance with frequency
-stepper_pwm = GPIO.PWM(stepper_pwm_pin, 5000)
+stepper_pwm = GPIO.PWM(stepper_pwm_pin, 10_000)
 stepper_pwm.start(0)  # start PWM of required Duty Cycle
 
 motor_pwm = GPIO.PWM(motor_pin, 10_000)  # create PWM instance with frequency
@@ -44,11 +44,10 @@ def forward():
 @app.route('/left')
 def left():
     GPIO.output(dir, GPIO.HIGH)
-    for _ in range(1000):
+    for duty in range(0, 100, 10):
         # provide duty cycle in the range 0-100
-        stepper_pwm.ChangeDutyCycle(100)
+        stepper_pwm.ChangeDutyCycle(duty)
         sleep(0.001)
-        stepper_pwm.ChangeDutyCycle(0)
     print("left")
     return 'L'
 
@@ -56,11 +55,10 @@ def left():
 @app.route('/right')
 def right():
     GPIO.output(dir, GPIO.LOW)
-    for _ in range(1000):
+    for duty in range(0, 100, 10):
         # provide duty cycle in the range 0-100
-        stepper_pwm.ChangeDutyCycle(100)
+        stepper_pwm.ChangeDutyCycle(duty)
         sleep(0.001)
-        stepper_pwm.ChangeDutyCycle(0)
     print("right")
     return 'R'
 
