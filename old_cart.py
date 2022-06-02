@@ -47,5 +47,5 @@ while True:
 
     for duty in range(0, 101, 1):
         # provide duty cycle in the range 0-100
-        motor_pwm.ChangeDutyCycle(duty)
+        stepper_pwm.ChangeDutyCycle(duty)
         sleep(0.001)
