@@ -19,7 +19,7 @@ GPIO.output(enable, GPIO.HIGH)
 GPIO.output(dir, GPIO.LOW)
 
 # create PWM instance with frequency
-stepper_pwm = GPIO.PWM(stepper_pwm_pin, 5000)
+stepper_pwm = GPIO.PWM(stepper_pwm_pin, 10_000)
 stepper_pwm.start(0)  # start PWM of required Duty Cycle
 
 motor_pwm = GPIO.PWM(motor_pin, 10_000)  # create PWM instance with frequency
