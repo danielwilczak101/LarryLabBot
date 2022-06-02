@@ -13,7 +13,7 @@ GPIO.setup(enable, GPIO.OUT)
 GPIO.setup(dir, GPIO.OUT)
 
 GPIO.output(enable, GPIO.HIGH)
-GPIO.output(dir, GPIO.HIGH)
+GPIO.output(dir, GPIO.LOW)
 
 pi_pwm = GPIO.PWM(pwm, 1000)  # create PWM instance with frequency
 pi_pwm.start(0)  # start PWM of required Duty Cycle
