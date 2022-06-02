@@ -44,6 +44,7 @@ def forward():
 @app.route('/left')
 def left():
     GPIO.output(dir, GPIO.HIGH)
+    GPIO.output(enable, GPIO.HIGH)
     for duty in range(0, 100, 10):
         # provide duty cycle in the range 0-100
         stepper_pwm.ChangeDutyCycle(duty)
@@ -54,6 +55,7 @@ def left():
 
 @app.route('/right')
 def right():
+    GPIO.output(enable, GPIO.HIGH)
     GPIO.output(dir, GPIO.LOW)
     for duty in range(0, 100, 10):
         # provide duty cycle in the range 0-100
