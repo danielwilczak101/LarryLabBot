@@ -71,6 +71,6 @@ def stop():
     for duty in range(0, 100, 1):
         # provide duty cycle in the range 0-100
         stepper_pwm.ChangeDutyCycle(0)
-        sleep(0.001)
+        sleep(0.00001)
     print("stop")
     return 'S'
