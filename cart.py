@@ -12,7 +12,7 @@ dir = 21
 motor_pin = 12
 
 GPIO.setmode(GPIO.BCM)  # set pin numbering system
-
+GPIO.setwarnings(False)
 GPIO.setup(stepper_pwm_pin, GPIO.OUT)
 GPIO.setup(enable, GPIO.OUT)
 GPIO.setup(dir, GPIO.OUT)
