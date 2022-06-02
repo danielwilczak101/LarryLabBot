@@ -36,7 +36,7 @@ def index():
 
 @app.route('/forward')
 def forward():
-    motor_pwm.ChangeDutyCycle(100)
+    motor_pwm.ChangeDutyCycle(50)
     print("forward")
     return 'F'
 
@@ -59,6 +59,6 @@ def right():
 
 @app.route('/stop')
 def stop():
-    motor_pwm.ChangeDutyCycle(100)
+    motor_pwm.ChangeDutyCycle(0)
     print("stop")
     return 'S'
