@@ -44,7 +44,7 @@ for _ in range(2):
     print("out")
     linear_out()
 
-    sleep(2)
+    sleep(4)
     print("in")
     linear_in()
 
