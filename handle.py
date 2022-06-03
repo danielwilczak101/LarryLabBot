@@ -47,5 +47,6 @@ for _ in range(2):
     sleep(4)
     print("in")
     linear_in()
+    sleep(4)
 
 GPIO.output(enable, GPIO.LOW)
