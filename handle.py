@@ -43,7 +43,7 @@ def linear_off():
 for _ in range(2):
     linear_out()
 
-    sleep(2000)
+    sleep(2)
 
     linear_in()
 
