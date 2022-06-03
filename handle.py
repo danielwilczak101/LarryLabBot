@@ -41,10 +41,11 @@ def linear_off():
 
 
 for _ in range(2):
+    print("out")
     linear_out()
 
     sleep(2)
-
+    print("in")
     linear_in()
 
 GPIO.output(enable, GPIO.LOW)
