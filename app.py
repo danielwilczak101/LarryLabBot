@@ -8,7 +8,7 @@ import numpy
 
 picam2 = Picamera2()
 picam2.still_configuration.size = (320, 240)
-picam2.format = 'YUV420'
+picam2.format = 'RGB'
 
 kit = MotorKit()
 app = Flask(__name__)
