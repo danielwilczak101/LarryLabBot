@@ -1,12 +1,13 @@
 from adafruit_motorkit import MotorKit
 from flask import Flask, render_template
+from picamera2 import Picamera2
 
 import socket
 
 kit = MotorKit()
 app = Flask(__name__)
 
-throttle = 0.7
+throttle = 0.5
 
 
 @app.route('/')
@@ -18,6 +19,16 @@ def index():
 def forward():
     kit.motor1.throttle = throttle
     kit.motor2.throttle = throttle
+
+    picam2 = Picamera2()
+    config = picam2.create_still_configuration()
+    picam2.configure(config)
+
+    picam2.start()
+
+    np_array = picam2.capture_array()
+    print(np_array)
+    picam2.stop()
 
     print("forward")
     return 'F'
