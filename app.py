@@ -1,5 +1,5 @@
 from adafruit_motorkit import MotorKit
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from picamera2 import Picamera2
 
 
@@ -79,4 +79,4 @@ def camera():
     np_array = picam2.capture_array()
     picam2.stop()
 
-    return json.dump(np_array.tolist())
+    return jsonify(np_array.tolist())
