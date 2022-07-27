@@ -79,5 +79,4 @@ def camera():
     np_array = picam2.capture_array()
     picam2.stop()
 
-    np_array.tolist()
-    return json.dump(np_array)
+    return json.dump(np_array.tolist())

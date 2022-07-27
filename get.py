@@ -1,13 +1,11 @@
 
-import requests
+import urllib.request
 import json
 import numpy as np
 
-resp = requests.get('http://192.168.1.140:4000/camera')
-data = resp.json()
+with urllib.request.urlopen("http://192.168.1.140:4000/camera") as url:
+    data = json.loads(url.read().decode())
 
-decodedArrays = json.loads(data)
+new = np.array(data)
 
-finalNumpyArray = np.asarray(decodedArrays["array"])
-
-print(finalNumpyArray.shape)
+print(new.shape)
