@@ -70,8 +70,8 @@ def stop():
 
 @app.route('/camera', methods=['GET'])
 def camera():
-    picam2 = Picamera2()
-    config = picam2.create_still_configuration()
+    picam2 = Picamera2(verbose_console=0)
+    config = picam2.create_still_configuration(main={"size": (28, 28)})
     picam2.configure(config)
 
     picam2.start()
@@ -79,6 +79,6 @@ def camera():
     np_array = picam2.capture_array()
     picam2.stop()
 
-    #numpyData = {"array": np_array}
-    #encodedNumpyData = json.dumps(numpyData, cls=NumpyArrayEncoder)
-    return 'hello'
+    numpyData = {"array": np_array}
+    encodedNumpyData = json.dumps(numpyData, cls=NumpyArrayEncoder)
+    return encodedNumpyData
