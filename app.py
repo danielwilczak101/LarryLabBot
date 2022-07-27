@@ -71,9 +71,7 @@ def stop():
 @app.route('/camera', methods=['GET'])
 def camera():
     picam2 = Picamera2()
-    preview_config = picam2.create_preview_configuration(
-        main={"size": (28, 28)})
-    picam2.configure(preview_config)
+    picam2.still_configuration.size = (800, 600)
 
     picam2.start()
 
