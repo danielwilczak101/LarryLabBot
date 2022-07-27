@@ -20,16 +20,6 @@ def forward():
     kit.motor1.throttle = throttle
     kit.motor2.throttle = throttle
 
-    picam2 = Picamera2()
-    config = picam2.create_still_configuration()
-    picam2.configure(config)
-
-    picam2.start()
-
-    np_array = picam2.capture_array()
-    print(np_array)
-    picam2.stop()
-
     print("forward")
     return 'F'
 
@@ -65,3 +55,16 @@ def stop():
 
     print("stop")
     return 'S'
+
+
+@app.route('/camera', methods=['GET'])
+def camera():
+    picam2 = Picamera2()
+    config = picam2.create_still_configuration()
+    picam2.configure(config)
+
+    picam2.start()
+
+    np_array = picam2.capture_array()
+    picam2.stop()
+    return np_array
