@@ -2,7 +2,18 @@ from adafruit_motorkit import MotorKit
 from flask import Flask, render_template
 from picamera2 import Picamera2
 
-import socket
+
+import json
+from json import JSONEncoder
+import numpy
+
+
+class NumpyArrayEncoder(JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, numpy.ndarray):
+            return obj.tolist()
+        return JSONEncoder.default(self, obj)
+
 
 kit = MotorKit()
 app = Flask(__name__)
@@ -67,4 +78,7 @@ def camera():
 
     np_array = picam2.capture_array()
     picam2.stop()
-    return np_array
+
+    numpyData = {"array": np_array}
+    encodedNumpyData = json.dumps(numpyData, cls=NumpyArrayEncoder)
+    return encodedNumpyData
