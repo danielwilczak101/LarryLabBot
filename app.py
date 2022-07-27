@@ -71,7 +71,8 @@ def stop():
 @app.route('/camera', methods=['GET'])
 def camera():
     picam2 = Picamera2()
-    picam2.still_configuration.size = (800, 600)
+    picam2.still_configuration.size = (320, 240)
+    picam2.format = 'YUV420'
 
     picam2.start()
 
