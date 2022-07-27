@@ -5,10 +5,14 @@ from picamera2 import Picamera2
 import json
 from json import JSONEncoder
 import numpy
+import libcamera
 
 picam2 = Picamera2()
+preview_config = picam2.create_preview_configuration()
+preview_config["transform"] = libcamera.Transform(vflip=1)
+picam2.configure(preview_config)
 picam2.still_configuration.size = (320, 240)
-picam2.format = 'RGB'
+picam2.format = 'YUV420'
 
 kit = MotorKit()
 app = Flask(__name__)

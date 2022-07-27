@@ -2,10 +2,13 @@
 import urllib.request
 import json
 import numpy as np
+import matplotlib.pyplot as plt
 
 with urllib.request.urlopen("http://192.168.1.140:4000/camera") as url:
     data = json.loads(url.read().decode())
 
-new = np.array(data)
+photo = np.array(data)
 
-print(new.shape)
+
+plt.imshow(photo)
+plt.show()
