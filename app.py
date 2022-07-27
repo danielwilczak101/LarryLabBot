@@ -79,6 +79,5 @@ def camera():
     np_array = picam2.capture_array()
     picam2.stop()
 
-    numpyData = {"array": np_array}
-    encodedNumpyData = json.dumps(numpyData, cls=NumpyArrayEncoder)
-    return encodedNumpyData
+    np_array.tolist()
+    return json.dump(np_array)
