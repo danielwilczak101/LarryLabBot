@@ -1,8 +1,9 @@
+![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/larryv4_cleaned_up.jpg)
+
 # Larry The Lab Bot
 Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements he can now do.  
-https://www.youtube.com/embed/S1lelsa4xNU
 
-![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/larryv4_cleaned_up.jpg)
+https://www.youtube.com/embed/S1lelsa4xNU
 
 #### Website:
 All controls go through the website so that you dont need any fance gui or controllers. If it works on your pc's browser then you can control larry. The best is when two people fight over control. Since it's on the browser this is possible.
