@@ -1,6 +1,3 @@
-# LarryLabBot V2
-EPPL larry the lab bot. Fun project for driving a small bot inside the lab.
-
 #### Start up commands
 Connect to the pi once powered on.
 ```bash
@@ -18,10 +15,23 @@ gunicorn -w 1 -b 0.0.0.0:4000 app:app // Not detached
 gunicorn -w 1 -b 0.0.0.0:4000 app:app -D --log-file=gunicorn.log // Detached
 ```
 
+# Larry's Long History:
+
+## Larry Version3
+Larry took over an old JetBot frame that I built a while back with the jetson nano that would always blow up and the drivers for all the software was garbage.
+
+
+![]()
+
+# LarryLabBot V2
+Larry got some new wheels and a new frame.
+
 ![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/IMG_3665.JPG)
-![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/IMG_3664.JPG)
+
 
 # LarryLabBot V1
+OG LARRY from when we started.
+
 ![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/IMG_3472.jpg)
-![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/IMG_3473.jpg)
+
 
