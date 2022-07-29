@@ -29,6 +29,8 @@ def index():
 def forward():
     kit.motor1.throttle = throttle
     kit.motor2.throttle = throttle
+    kit.motor3.throttle = throttle
+    kit.motor4.throttle = throttle
 
     print("forward")
     return 'F'
@@ -38,6 +40,8 @@ def forward():
 def reverse():
     kit.motor1.throttle = -throttle
     kit.motor2.throttle = -throttle
+    kit.motor3.throttle = -throttle
+    kit.motor4.throttle = -throttle
     print("reverse")
     return 'R'
 
@@ -46,6 +50,8 @@ def reverse():
 def left():
     kit.motor1.throttle = -throttle
     kit.motor2.throttle = throttle
+    kit.motor3.throttle = -throttle
+    kit.motor4.throttle = throttle
     print("left")
     return 'L'
 
@@ -54,6 +60,8 @@ def left():
 def right():
     kit.motor1.throttle = throttle
     kit.motor2.throttle = -throttle
+    kit.motor3.throttle = throttle
+    kit.motor4.throttle = -throttle
     print("right")
     return 'R'
 
@@ -62,9 +70,55 @@ def right():
 def stop():
     kit.motor1.throttle = 0
     kit.motor2.throttle = 0
+    kit.motor3.throttle = 0
+    kit.motor4.throttle = 0
 
     print("stop")
     return 'S'
+
+
+@app.route('/diagonal_right')
+def diagonal_right():
+    kit.motor1.throttle = throttle
+    kit.motor2.throttle = 0
+    kit.motor3.throttle = throttle
+    kit.motor4.throttle = 0
+
+    print("Diagonal Right")
+    return 'DR'
+
+
+@app.route('/diagonal_left')
+def diagonal_left():
+    kit.motor1.throttle = 0
+    kit.motor2.throttle = throttle
+    kit.motor3.throttle = 0
+    kit.motor4.throttle = throttle
+
+    print("Diagonal Left")
+    return 'DL'
+
+
+@app.route('/clockwise')
+def clockwise():
+    kit.motor1.throttle = throttle
+    kit.motor2.throttle = -throttle
+    kit.motor3.throttle = -throttle
+    kit.motor4.throttle = throttle
+
+    print("Spin Left")
+    return 'C'
+
+
+@app.route('/counterclockwise')
+def counterclockwise():
+    kit.motor1.throttle = -throttle
+    kit.motor2.throttle = throttle
+    kit.motor3.throttle = throttle
+    kit.motor4.throttle = -throttle
+
+    print("Spin Right")
+    return 'CC'
 
 
 @app.route('/camera', methods=['GET'])
