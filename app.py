@@ -108,7 +108,7 @@ def rev_diagonal_right():
 
 
 @app.route('/rev_diagonal_left')
-def fwd_diagonal_left():
+def rev_diagonal_left():
     kit.motor1.throttle = 0
     kit.motor2.throttle = -throttle
     kit.motor3.throttle = 0
