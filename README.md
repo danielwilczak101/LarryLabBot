@@ -1,5 +1,5 @@
 # Larry The Lab Bot
-Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements he can now do. 
+Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements he can now do.  
 https://www.youtube.com/embed/S1lelsa4xNU
 
 ![](https://raw.githubusercontent.com/danielwilczak101/LarryLabBot/media/images/larryv4_cleaned_up.jpg)
