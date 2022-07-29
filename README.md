@@ -8,7 +8,7 @@ The all controls go through the website so that you dont need any fance gui or c
 
 <p align="center"> 
   <kbd>
-    <img width="460" height="300"
+    <img width="460" height="400"
     src="https://github.com/danielwilczak101/LarryLabBot/blob/media/images/websiteV4.png">
   </kbd>
 </p>
