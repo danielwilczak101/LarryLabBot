@@ -1,4 +1,4 @@
-from motor.adafruit_motorkit import MotorKit
+from controls.adafruit_motorkit import MotorKit
 from flask import Flask, render_template, jsonify
 from picamera2 import Picamera2
 
