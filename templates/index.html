@@ -139,14 +139,15 @@
 <script>
     document.addEventListener('keydown', function (e) {
         switch (e.keyCode) {
+            // Keyboard/ASCII key number can be found: https://bit.ly/3cRMDkI 
             case 37: $.get("/left"); break;    // Arrow Left
             case 38: $.get("/forward"); break; // Arrow Up
             case 39: $.get("/right"); break;   // Arrow Right
             case 40: $.get("/reverse"); break; // Arow Down
             case 32: $.get("/stop"); break;    // Space bar
 
-            case 101: $.get("/diagonal_right"); break;  // E
-            case 113: $.get("/diagonal_left"); break;   // Q
+            case 69: $.get("/diagonal_right"); break;  // E
+            case 81: $.get("/diagonal_left"); break;   // Q
             case 88: $.get("/clockwise"); break;        // Z
             case 90: $.get("/counterclockwise"); break; // X
         }
