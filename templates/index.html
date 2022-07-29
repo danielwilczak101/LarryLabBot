@@ -139,44 +139,30 @@
 <script>
     document.addEventListener('keydown', function (e) {
         switch (e.keyCode) {
-            case 37:
-                $.get("/left");
-                break;
-            case 38:
-                $.get("/forward");
-                break;
-            case 39:
-                $.get("/right");
-                break;
-            case 40:
-                $.get("/reverse");
-                break;
-            case 32:
-                $.get("/stop");
-                break;
+            case 37: $.get("/left"); break;    // Arrow Left
+            case 38: $.get("/forward"); break; // Arrow Up
+            case 39: $.get("/right"); break;   // Arrow Right
+            case 40: $.get("/reverse"); break; // Arow Down
+            case 32: $.get("/stop"); break;    // Space bar
+
+            case 101: $.get("/diagonal_right"); break;  // E
+            case 113: $.get("/diagonal_left"); break;   // Q
+            case 90: $.get("/clockwise"); break;        // Z
+            case 88: $.get("/counterclockwise"); break; // X
         }
     });
 
     $(document).ready(function () {
-        $("#forward").click(function () {
-            $.get("/forward");
-        });
+        $("#forward").click(function () { $.get("/forward"); });
+        $("#left").click(function () { $.get("/left"); });
+        $("#right").click(function () { $.get("/right"); });
+        $("#reverse").click(function () { $.get("/reverse"); });
+        $("#stop").click(function () { $.get("/stop"); });
 
-        $("#left").click(function () {
-            $.get("/left");
-        });
-
-        $("#right").click(function () {
-            $.get("/right");
-        });
-
-        $("#reverse").click(function () {
-            $.get("/reverse");
-        });
-
-        $("#stop").click(function () {
-            $.get("/stop");
-        });
+        $("#diagonal_right").click(function () { $.get("/diagonal_right"); });
+        $("#diagonal_left").click(function () { $.get("/diagonal_left"); });
+        $("#clockwise").click(function () { $.get("/clockwise"); });
+        $("#counterclockwise").click(function () { $.get("/counterclockwise"); });
     });
 
 </script>
@@ -198,12 +184,17 @@
             <p class="lead">Press your arrow key's to accomplish tasks and spacebar for stop.</p>
             <p class="lead">
             <div id="forward" style="cursor: pointer;" class="btn btn-lg btn-secondary">Forward</div>
+            <div id="diagonal_right" style="cursor: pointer;" class="btn btn-lg btn-secondary">Diagonal Right</div>
             </p>
             <p>
+            <div id="clockwise" style="margin-right:10px;cursor: pointer;" class="btn btn-lg btn-secondary">↻</div>
             <div id="left" style="margin-right:10px;cursor: pointer;" class="btn btn-lg btn-secondary">Left</div>
             <div id="right" style="margin-left:10px;cursor: pointer;" class="btn btn-lg btn-secondary">Right</div>
+            <div id="counterclockwise" style="margin-left:10px;cursor: pointer;" class="btn btn-lg btn-secondary">↺
+            </div>
             </p>
             <p>
+            <div id="diagonal_left" style="cursor: pointer;" class="btn btn-lg btn-secondary">Diagonal Left</div>
             <div id="reverse" style="cursor: pointer;" class="btn btn-lg btn-secondary">Reverse</div>
             </p>
             <p>
