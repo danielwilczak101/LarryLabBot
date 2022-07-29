@@ -4,7 +4,8 @@ EPPL larry the lab bot. Fun project for driving a small bot inside the lab.
 #### Start up commands
 Connect to the pi once powered on.
 ```bash
-ssh pi@raspberrypi.local
+ssh-keygen -R raspberrypi.local // Remove old pi connection from pc
+ssh pi@raspberrypi.local // connect to one and old raspberry pi on local
 ```
 Move to the code directory.
 ```bash
