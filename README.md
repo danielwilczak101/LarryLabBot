@@ -1,11 +1,36 @@
 # Larry The Lab Bot
-CURRENT VERSION GOES HERE
+Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements he can now do.
+
+![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/LarryV4.jpg)
+
+## Youtube Video
+https://www.youtube.com/embed/S1lelsa4xNU
+
+#### Features:
+  - Website for controls
+  - 8BitDo SN30
+  - Grab images using API call's
+    ```Python
+    import urllib.request
+    import json
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    with urllib.request.urlopen("http://192.168.1.140:4000//camera") as url:
+        data = json.loads(url.read().decode())
+
+    photo = np.array(data)
+
+
+    plt.imshow(photo)
+    plt.show()
+    ```
 
 ## Start up commands
 Connect to the pi once powered on.
 ```bash
 ssh-keygen -R raspberrypi.local // Remove old pi connection from pc
-ssh pi@raspberrypi.local // connect to one and old raspberry pi on local
+ssh pi@raspberrypi.local // connect to local raspberry pi because i'm to lazy to look up the I.P
 ```
 Move to the code directory.
 ```bash
