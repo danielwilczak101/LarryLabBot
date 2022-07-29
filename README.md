@@ -9,7 +9,7 @@ All controls go through the website so that you dont need any fance gui or contr
 <p align="center"> 
   <kbd>
     <img width="460" height="400"
-    src="https://github.com/danielwilczak101/LarryLabBot/blob/media/images/websiteV4.png">
+    src="https://github.com/danielwilczak101/LarryLabBot/blob/media/images/larryv4_cleaned_up.jpg">
   </kbd>
 </p>
 
