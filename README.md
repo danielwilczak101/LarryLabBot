@@ -1,4 +1,7 @@
-#### Start up commands
+# Larry The Lab Bot
+CURRENT VERSION GOES HERE
+
+## Start up commands
 Connect to the pi once powered on.
 ```bash
 ssh-keygen -R raspberrypi.local // Remove old pi connection from pc
@@ -21,7 +24,7 @@ gunicorn -w 1 -b 0.0.0.0:4000 app:app -D --log-file=gunicorn.log // Detached
 Larry took over an old JetBot frame that I built a while back with the jetson nano that would always blow up and the drivers for all the software was garbage.
 
 
-![]()
+![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/larryv3.jpg)
 
 # LarryLabBot V2
 Larry got some new wheels and a new frame.
