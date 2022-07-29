@@ -1,5 +1,9 @@
 # Larry The Lab Bot
-CURRENT VERSION GOES HERE
+Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements here can now do.
+
+![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/LarryV4.jpg)
+
+YOUTUBE VIDEO
 
 ## Start up commands
 Connect to the pi once powered on.
