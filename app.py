@@ -1,10 +1,7 @@
-from adafruit_motorkit import MotorKit
+from motor.adafruit_motorkit import MotorKit
 from flask import Flask, render_template, jsonify
 from picamera2 import Picamera2
 
-import json
-from json import JSONEncoder
-import numpy
 import libcamera
 
 picam2 = Picamera2()
