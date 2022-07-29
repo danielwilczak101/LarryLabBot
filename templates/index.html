@@ -150,6 +150,7 @@
             case 81: $.get("/diagonal_left"); break;   // Q
             case 88: $.get("/clockwise"); break;        // Z
             case 90: $.get("/counterclockwise"); break; // X
+            case 67: $.get("/camera"); break; // C
         }
     });
 
@@ -164,6 +165,7 @@
         $("#diagonal_left").click(function () { $.get("/diagonal_left"); });
         $("#clockwise").click(function () { $.get("/clockwise"); });
         $("#counterclockwise").click(function () { $.get("/counterclockwise"); });
+        $("#camera").click(function () { $.get("/camera"); });
     });
 
 </script>
@@ -200,6 +202,7 @@
             </p>
             <p>
             <div id="stop" style="cursor: pointer;" class="btn btn-lg btn-secondary">Stop</div>
+            <div id="camera" style="cursor: pointer;" class="btn btn-lg btn-secondary">Camera</div>
             </p>
             </p>
         </main>
