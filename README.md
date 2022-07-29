@@ -30,7 +30,7 @@ https://www.youtube.com/embed/S1lelsa4xNU
 Connect to the pi once powered on.
 ```bash
 ssh-keygen -R raspberrypi.local // Remove old pi connection from pc
-ssh pi@raspberrypi.local // connect to one and old raspberry pi on local
+ssh pi@raspberrypi.local // connect to local raspberry pi because i'm to lazy to look up the I.P
 ```
 Move to the code directory.
 ```bash
