@@ -4,7 +4,8 @@ Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his 
 ![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/LarryV4.jpg)
 
 #### Website:
-PUT WEBSITE CENTERED HERE.
+The all controls go through the website so that you dont need any fance gui or controllers. If it works on your pc's then you can control larry. The best is when two people fight over control. Since it's on the browser this is possible.
+![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/websiteV4.png)
 
 #### Features:
   - Website for controls
