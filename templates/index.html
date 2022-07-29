@@ -146,11 +146,14 @@
             case 40: $.get("/reverse"); break; // Arow Down
             case 32: $.get("/stop"); break;    // Space bar
 
-            case 69: $.get("/diagonal_right"); break;  // E
-            case 81: $.get("/diagonal_left"); break;   // Q
-            case 88: $.get("/clockwise"); break;        // Z
-            case 90: $.get("/counterclockwise"); break; // X
-            case 67: $.get("/camera"); break; // C
+            case 69: $.get("/fwd_diagonal_right"); break;  // E
+            case 81: $.get("/fwd_diagonal_left"); break;   // Q
+            case 88: $.get("/rev_diagonal_right"); break;  // Z
+            case 67: $.get("/rev_diagonal_left"); break;   // C
+
+            case 68: $.get("/clockwise"); break;        // D
+            case 65: $.get("/counterclockwise"); break; // A
+            case 83: $.get("/camera"); break; // S
         }
     });
 
@@ -161,10 +164,14 @@
         $("#reverse").click(function () { $.get("/reverse"); });
         $("#stop").click(function () { $.get("/stop"); });
 
-        $("#diagonal_right").click(function () { $.get("/diagonal_right"); });
-        $("#diagonal_left").click(function () { $.get("/diagonal_left"); });
+        $("#fwd_diagonal_right").click(function () { $.get("/fwd_diagonal_right"); });
+        $("#fwd_diagonal_left").click(function () { $.get("/fwd_diagonal_left"); });
+        $("#rev_diagonal_right").click(function () { $.get("/rev_diagonal_right"); });
+        $("#rev_diagonal_left").click(function () { $.get("/rev_diagonal_left"); });
+
         $("#clockwise").click(function () { $.get("/clockwise"); });
         $("#counterclockwise").click(function () { $.get("/counterclockwise"); });
+
         $("#camera").click(function () { $.get("/camera"); });
     });
 
@@ -186,8 +193,11 @@
             <h1 class="cover-heading">Larry Controls.</h1>
             <p class="lead">Press your arrow key's to accomplish tasks and spacebar for stop.</p>
             <p class="lead">
+            <div id="fwd_diagonal_left" style="cursor: pointer;" class="btn btn-lg btn-secondary">Fwd Diagonal Left
+            </div>
             <div id="forward" style="cursor: pointer;" class="btn btn-lg btn-secondary">Forward</div>
-            <div id="diagonal_right" style="cursor: pointer;" class="btn btn-lg btn-secondary">Diagonal Right</div>
+            <div id="fwd_diagonal_right" style="cursor: pointer;" class="btn btn-lg btn-secondary">Fwd Diagonal Right
+            </div>
             </p>
             <p>
             <div id="clockwise" style="margin-right:10px;cursor: pointer;" class="btn btn-lg btn-secondary">↻</div>
@@ -197,8 +207,11 @@
             </div>
             </p>
             <p>
-            <div id="diagonal_left" style="cursor: pointer;" class="btn btn-lg btn-secondary">Diagonal Left</div>
+            <div id="rev_diagonal_left" style="cursor: pointer;" class="btn btn-lg btn-secondary">Rev Diagonal Left
+            </div>
             <div id="reverse" style="cursor: pointer;" class="btn btn-lg btn-secondary">Reverse</div>
+            <div id="rev_diagonal_right" style="cursor: pointer;" class="btn btn-lg btn-secondary">Rev Diagonal Right
+            </div>
             </p>
             <p>
             <div id="stop" style="cursor: pointer;" class="btn btn-lg btn-secondary">Stop</div>

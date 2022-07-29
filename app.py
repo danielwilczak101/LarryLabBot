@@ -74,26 +74,48 @@ def stop():
     return 'S'
 
 
-@app.route('/diagonal_right')
-def diagonal_right():
+@app.route('/fwd_diagonal_right')
+def fwd_diagonal_right():
     kit.motor1.throttle = throttle
     kit.motor2.throttle = 0
     kit.motor3.throttle = throttle
     kit.motor4.throttle = 0
 
-    print("Diagonal Right")
-    return 'DR'
+    print("Forward Diagonal Right")
+    return 'FDR'
 
 
-@app.route('/diagonal_left')
-def diagonal_left():
+@app.route('/fwd_diagonal_left')
+def fwd_diagonal_left():
     kit.motor1.throttle = 0
     kit.motor2.throttle = throttle
     kit.motor3.throttle = 0
     kit.motor4.throttle = throttle
 
-    print("Diagonal Left")
-    return 'DL'
+    print("Forward Diagonal Left")
+    return 'FDL'
+
+
+@app.route('/rev_diagonal_right')
+def rev_diagonal_right():
+    kit.motor1.throttle = -throttle
+    kit.motor2.throttle = 0
+    kit.motor3.throttle = -throttle
+    kit.motor4.throttle = 0
+
+    print("Reverse Diagonal Right")
+    return 'RDR'
+
+
+@app.route('/rev_diagonal_left')
+def fwd_diagonal_left():
+    kit.motor1.throttle = 0
+    kit.motor2.throttle = -throttle
+    kit.motor3.throttle = 0
+    kit.motor4.throttle = -throttle
+
+    print("Reverse Diagonal Left")
+    return 'RDL'
 
 
 @app.route('/clockwise')
