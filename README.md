@@ -1,6 +1,26 @@
 # Larry The Lab Bot
 Larry got new mecanum wheels and a 8BitDo SN30 controller to control all of his movements. The website looks funny because of all the movements he can now do.
 
+#### Features:
+  - Website for controls
+  - 8BitDo SN30
+  - Grab images using API call's
+    ```Python
+    import urllib.request
+    import json
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    with urllib.request.urlopen("http://192.168.1.140:4000//camera") as url:
+        data = json.loads(url.read().decode())
+
+    photo = np.array(data)
+
+
+    plt.imshow(photo)
+    plt.show()
+    ```
+
 ![](https://github.com/danielwilczak101/LarryLabBot/blob/media/images/LarryV4.jpg)
 
 YOUTUBE VIDEO
