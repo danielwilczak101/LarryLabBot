@@ -43,15 +43,15 @@ Connect to the pi once powered on.
 ssh-keygen -R raspberrypi.local // Remove old pi connection from pc
 ssh pi@raspberrypi.local // connect to local raspberry pi because i'm to lazy to look up the I.P
 ```
-Move to the code directory.
+Download this repository and move into the code directory on the raspberry pi.
 ```bash
 cd Desktop/LarryLabBot/
 ```
 
 Run one of the two options.
 ```bash
-gunicorn -w 1 -b 0.0.0.0:4000 app:app // Not detached
-gunicorn -w 1 -b 0.0.0.0:4000 app:app -D --log-file=gunicorn.log // Detached
+gunicorn -w 1 -b 0.0.0.0:4000 app:app (Shows everything in the terminal)
+gunicorn -w 1 -b 0.0.0.0:4000 app:app -D --log-file=gunicorn.log // Detached (Runs in the background)
 ```
 
 # Larry's Long History:
