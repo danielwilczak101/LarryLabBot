@@ -1,15 +1,15 @@
 from controls.adafruit_motorkit import MotorKit
 from flask import Flask, render_template, jsonify
-from picamera2 import Picamera2
+#from picamera2 import Picamera2
 
-import libcamera
+#import libcamera
 
-picam2 = Picamera2()
-preview_config = picam2.create_preview_configuration()
-preview_config["transform"] = libcamera.Transform(vflip=1)
-picam2.configure(preview_config)
-picam2.still_configuration.size = (320, 240)
-picam2.format = 'YUV420'
+#picam2 = Picamera2()
+#preview_config = picam2.create_preview_configuration()
+#preview_config["transform"] = libcamera.Transform(vflip=1)
+#picam2.configure(preview_config)
+#picam2.still_configuration.size = (320, 240)
+#picam2.format = 'YUV420'
 
 kit = MotorKit()
 app = Flask(__name__)
@@ -140,11 +140,11 @@ def counterclockwise():
     return 'CC'
 
 
-@app.route('/camera', methods=['GET'])
-def camera():
+#@app.route('/camera', methods=['GET'])
+#def camera():
 
-    picam2.start()
-    np_array = picam2.capture_array()
-    picam2.stop()
+    #picam2.start()
+    #np_array = picam2.capture_array()
+    #picam2.stop()
 
-    return jsonify(np_array.tolist())
+    #return jsonify(np_array.tolist())
