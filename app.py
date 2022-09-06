@@ -14,7 +14,7 @@ from flask import Flask, render_template, jsonify
 kit = MotorKit()
 app = Flask(__name__)
 
-throttle = 1
+throttle = 0.5
 
 
 @app.route('/')
